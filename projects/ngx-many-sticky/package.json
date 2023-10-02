@@ -1,6 +1,22 @@
 {
   "name": "ngx-many-sticky",
-  "version": "0.1.0",
+  "version": "0.1.3",
+  "description": "ngx-many-sticky handles sticky menus the angular way. Can group sticky objects. See example on stackblitz: https://stackblitz.com/edit/stackblitz-starters-x1bkvy?file=src%2Fmain.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dontboyle/ngx-multi-sticky"
+  },
+  "homepage": "https://github.com/dontboyle/ngx-multi-sticky",
+  "author": "yupdon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dontboyle/ngx-multi-sticky/issues"
+  },
+  "keywords": [
+    "angular",
+    "sticky",
+    "directive"
+  ],
   "peerDependencies": {
     "@angular/common": "^15.2.0",
     "@angular/core": "^15.2.0"

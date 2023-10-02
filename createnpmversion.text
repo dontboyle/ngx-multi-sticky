@@ -2,3 +2,4 @@ ng build ngx-many-sticky
 cd dist/ngx-many-sticky
 npm login
 npm publish --access public
+cd ../..
