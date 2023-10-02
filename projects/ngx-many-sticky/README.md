@@ -1,6 +1,4 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/scttcper/ngx-toastr/master/misc/documentation-assets/ngx-toastr-example.png" width="300" alt="Angular Toastr">
-  <br>
+<div align="center">  
   <h1>ngx-many-sticky</h1>
   <br>
   <br>
