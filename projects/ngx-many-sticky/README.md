@@ -1,24 +1,79 @@
-# NgxManySticky
+<div align="center">
+  <img src="https://raw.githubusercontent.com/scttcper/ngx-toastr/master/misc/documentation-assets/ngx-toastr-example.png" width="300" alt="Angular Toastr">
+  <br>
+  <h1>ngx-many-sticky</h1>
+  <br>
+  <br>
+</div>
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+DEMO: https://stackblitz.com/edit/stackblitz-starters-x1bkvy?file=src%2Fmain.html
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name --project ngx-many-sticky` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-many-sticky`.
-> Note: Don't forget to add `--project ngx-many-sticky` or else it will be added to the default project in your `angular.json` file. 
+- Directive for easily managing and handling multiple stickies the angular way
 
-## Build
+## Dependencies
 
-Run `ng build ngx-many-sticky` to build the project. The build artifacts will be stored in the `dist/` directory.
+Latest version available for each version of Angular
 
-## Publishing
+| ngx-many-sticky | Angular |
+| --------------- | ------- |
+| 0.1.3           | 15.x    |
+| current         | >= 15.x |
 
-After building your library with `ng build ngx-many-sticky`, go to the dist folder `cd dist/ngx-many-sticky` and run `npm publish`.
+## Install
 
-## Running unit tests
+```bash
+npm install ngx-many-sticky --save
+```
 
-Run `ng test ngx-many-sticky` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Custom CSS classes required for animation.
 
-## Further help
+## Setup
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Module based
+
+```typescript
+import { CommonModule } from "@angular/common";
+
+import { NgxManyStickyModule, SrollHelper } from "ngx-many-sticky";
+
+@NgModule({
+  imports: [CommonModule, NgxManyStickyModule],
+  bootstrap: [App],
+  declarations: [App],
+})
+class MainModule {}
+```
+
+## Use
+
+```html
+<div><b>debug:</b> {{ sticky0["debug"] | json }}</div>
+<div #stickySpacer0></div>
+<!-- Place spacer element where you want -->
+<div
+  sticky
+  class="w-100 card bg-white"
+  [groupIndex]="0"
+  [elementIndex]="0"
+  [spacer]="stickySpacer0"
+  [options]="{
+            animation: false,
+            animationSpeed: '0.1s',
+        }"
+  [debug]="true"
+  #sticky0
+>
+  <div class="row" style="height: 150px">
+    <div class="col-md-2">Spacer Group:0 Element: 0</div>
+    <div class="col-md-10">I am 0,0</div>
+  </div>
+</div>
+```
+
+## License
+
+MIT
+
+---
