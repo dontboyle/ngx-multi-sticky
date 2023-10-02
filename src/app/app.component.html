@@ -59,7 +59,7 @@
     <div class="col-md-9 offset-md-3">
       <div #stickySpacer0></div>
       <div
-        sticky
+        many-sticky
         class="w-100 card bg-white"
         [groupIndex]="0"
         [elementIndex]="0"
@@ -86,7 +86,7 @@
       <div>I'm not a sticky element</div>
       <div #stickySpacer2></div>
       <div
-        sticky
+        many-sticky
         class="w-100 bg-primary"
         [groupIndex]="0"
         [elementIndex]="1"
@@ -113,7 +113,7 @@
       <div>I'm not a sticky element</div>
       <div #stickySpacer3></div>
       <div
-        sticky
+        many-sticky
         class="w-100 bg-warning"
         [groupIndex]="1"
         [elementIndex]="0"
@@ -142,7 +142,7 @@
         <div *ngIf="!(i % 5)">
           <div #stickySpacerArrayTest></div>
           <div
-            sticky
+            many-sticky
             class="w-100 bg-dark"
             [groupIndex]="2"
             [elementIndex]="i"

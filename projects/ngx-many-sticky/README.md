@@ -16,7 +16,7 @@ Latest version available for each version of Angular
 
 | ngx-many-sticky | Angular |
 | --------------- | ------- |
-| 0.1.5           | 15.x    |
+| 0.1.6           | 15.x    |
 | current         | >= 15.x |
 
 ## Install
@@ -51,7 +51,7 @@ class MainModule {}
 <div #stickySpacer0></div>
 <!-- Place spacer element where you want -->
 <div
-  sticky
+  many-sticky
   class="w-100 card bg-white"
   [groupIndex]="0"
   [elementIndex]="0"

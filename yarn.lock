@@ -6041,7 +6041,7 @@
 
 "ngx-many-sticky@file:dist/ngx-many-sticky":
   "resolved" "file:dist/ngx-many-sticky"
-  "version" "0.1.3"
+  "version" "0.1.6"
   dependencies:
     "tslib" "^2.3.0"
 

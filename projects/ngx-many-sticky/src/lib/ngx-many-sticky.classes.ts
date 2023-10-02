@@ -1,7 +1,7 @@
 import { ElementRef, EventEmitter } from '@angular/core';
 
 export class StickyAttributes {
-  static selector = 'sticky';
+  static selector = 'many-sticky';
   static groupIndex = 'groupIndex';
   static elementIndex = 'elementIndex';
 }
