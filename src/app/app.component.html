@@ -1,0 +1,162 @@
+<div class="container-fluid">
+  <div class="row bg-white">
+    <div class="col-md-3 fixed-sidebar p-0 m-0 bg-white">
+      <div class="p-3">
+        <!-- Sidebar content -->
+        <div class="bg-light p-3">
+          <h3>Sidebar</h3>
+          <p>This is a fixed sidebar.</p>
+        </div>
+        <div class="bg-secondary text-white p-3">
+          <div>sticky0</div>
+          <div><b>debug:</b> {{ sticky0["debug"] | json }}</div>
+
+          <div>sticky2</div>
+          <div><b>debug:</b> {{ sticky2["debug"] | json }}</div>
+
+          <div>sticky3</div>
+          <div><b>debug:</b> {{ sticky3["debug"] | json }}</div>
+        </div>
+        <div class="bg-white p-3">
+          <button
+            type="button"
+            class="btn btn-white"
+            (click)="srollHelper.scrollTo(0, 0)"
+          >
+            scrollTo(0, 0)
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="srollHelper.scrollTo(0, 1)"
+          >
+            scrollTo(0, 1)
+          </button>
+          <button
+            type="button"
+            class="btn btn-warning"
+            (click)="srollHelper.scrollTo(1, 0)"
+          >
+            scrollTo(1, 0)
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-body p-3 d-flex flex-row flex-wrap">
+        <div *ngFor="let num of testRows; let i = index">
+          <div *ngIf="!(i % 5)">
+            <button
+              type="button"
+              class="btn btn-dark"
+              (click)="srollHelper.scrollTo(2, i)"
+            >
+              scrollTo(2, {{ i }})
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 offset-md-3">
+      <div #stickySpacer0></div>
+      <div
+        sticky
+        class="w-100 card bg-white"
+        [groupIndex]="0"
+        [elementIndex]="0"
+        [spacer]="stickySpacer0"
+        [options]="{
+        animationSpeed: '0.1s',
+    }"
+        [debug]="true"
+        #sticky0
+      >
+        <div class="row" style="height: 150px">
+          <div class="col-md-2">0,0</div>
+          <div class="col-md-10">I am 0,0</div>
+        </div>
+        <!-- <div [hidden]="sticky2['isSticky']">hide me on sticky2 activation:</div>
+        <div [ngClass]="{ isSticky: sticky0['isSticky'] }">
+          custom class on sticky 2 activation
+        </div> -->
+      </div>
+      <div>I'm not a sticky element</div>
+      <div>I'm not a sticky element</div>
+      <div>I'm not a sticky element</div>
+      <div>I'm not a sticky element</div>
+      <div>I'm not a sticky element</div>
+      <div #stickySpacer2></div>
+      <div
+        sticky
+        class="w-100 bg-primary"
+        [groupIndex]="0"
+        [elementIndex]="1"
+        [spacer]="stickySpacer2"
+        [options]="{
+        animationSpeed: '0.1s',
+    }"
+        #sticky2
+        [debug]="true"
+      >
+        <div class="row" style="height: 150px">
+          <div class="col-md-2">0,1</div>
+          <div class="col-md-10">
+            I am 0,1 and should overlay 0,0 when i become sticky
+          </div>
+        </div>
+      </div>
+
+      <div>I'm not a sticky element</div>
+      <div>I'm not a sticky element</div>
+      <div>I'm not a sticky element</div>
+      <div>I'm not a sticky element</div>
+      <div>I'm not a sticky element</div>
+      <div>I'm not a sticky element</div>
+      <div #stickySpacer3></div>
+      <div
+        sticky
+        class="w-100 bg-warning"
+        [groupIndex]="1"
+        [elementIndex]="0"
+        [spacer]="stickySpacer3"
+        [options]="{
+        animationSpeed: '0.1s',
+    }"
+        #sticky3
+        [debug]="true"
+      >
+        <div class="row" style="height: 150px">
+          <div class="col-md-2">1,0</div>
+          <div class="col-md-10">
+            I will not replace 0,2 but sticky to bottom of because i'm in a
+            different group
+          </div>
+        </div>
+      </div>
+
+      <div>not sticky element</div>
+      <div *ngFor="let num of testRows; let i = index">
+        <div class="row" *ngIf="i % 5">
+          <div class="col-md-12">non-sticky content # {{ num }}</div>
+        </div>
+
+        <div *ngIf="!(i % 5)">
+          <div #stickySpacerArrayTest></div>
+          <div
+            sticky
+            class="w-100 bg-dark"
+            [groupIndex]="2"
+            [elementIndex]="i"
+            [spacer]="stickySpacerArrayTest"
+            #stickyArrayTest
+            [debug]="true"
+          >
+            <div class="row text-white">
+              <div class="col-md-12">sticky content # {{ num }}</div>
+              <div>{{ stickyArrayTest["debug"] | json }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
