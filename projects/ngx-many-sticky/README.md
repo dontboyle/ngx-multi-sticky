@@ -16,7 +16,7 @@ Latest version available for each version of Angular
 
 | ngx-many-sticky | Angular |
 | --------------- | ------- |
-| 0.1.4           | 15.x    |
+| 0.1.5           | 15.x    |
 | current         | >= 15.x |
 
 ## Install
