@@ -16,6 +16,7 @@ import { NgxManyStickyService } from './ngx-many-sticky.service';
 
 @Directive({
   selector: `[${StickyAttributes.selector}]`,
+  exportAs: `${StickyAttributes.selector}`,
 })
 export class NgxManyStickyDirective implements AfterViewInit, OnDestroy {
   private instance = new StickyInstance();
