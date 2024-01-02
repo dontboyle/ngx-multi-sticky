@@ -1,6 +1,6 @@
 {
   "name": "ngx-many-sticky",
-  "version": "1.0.2",
+  "version": "this doesnt matter need to run publish:lib which should be using the ngx package json and ng-package to publish package from /projects folder",
   "private": false,
   "scripts": {
     "ng": "ng",
@@ -11,6 +11,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build-single": "npm run build && npx gulp",
+    "_publish_below": "update nu-package.json and package.json inside of the projects directory....",
     "publish:lib": "npm run build-single && ng build ngx-many-sticky && cd dist/ngx-many-sticky && npm publish --access public && cd ../../"
   },
   "dependencies": {
